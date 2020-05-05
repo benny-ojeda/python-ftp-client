@@ -1,7 +1,6 @@
 import os
 import sys
 from ftplib import FTP
-from ftplib import FTP_TLS
 import ftplib
 import argparse
 import getpass
