@@ -10,7 +10,19 @@ parser.add_argument('ftp_server')
 args = parser.parse_args()
 
 def cli(prompt, reminder='Please type a valid command'):
-    commands = ['help','ls', 'pwd', 'cd', 'get', 'send', 'mkdir', 'rmdir', 'delete', 'size', 'debug']
+    commands = [
+                'help',
+                'ls', 
+                'pwd', 
+                'cd', 
+                'get', 
+                'send', 
+                'mkdir', 
+                'rmdir', 
+                'delete', 
+                'size', 
+                'debug'
+                ]
 
     while True:
         cmd = input(prompt)
