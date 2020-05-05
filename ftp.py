@@ -32,7 +32,7 @@ mkdir       pwd             rmdir           send        size
             print(ftp.retrbinary("RETR " + filename, open(str(filename), 'wb').write))
         if cmd.split()[0] == commands[5]:
             filename = cmd.split()[1]
-            print(ftp.storbinary("STOR " + filename, open(filename), blocksize=8192, callback=None, rest=None))
+            print(ftp.storbinary("STOR " + filename, open(filename, 'rb'), callback=None))
         if cmd.split()[0] == (commands[6]):
             dirname = cmd.split()[1]
             print(ftp.mkd(dirname))
@@ -67,7 +67,8 @@ if args.ftp_server == sys.argv[1]:
             print(ftp.getwelcome())
             cli('ftp> ')
     
-        except ftplib.all_errors as e:
-            print('FTP error: ', e)
+        except ftplib.all_errors as error:
+            print('FTP error: ', error)
+            cli('ftp> ')   
 else:
     print("Please enter a valid argument")
