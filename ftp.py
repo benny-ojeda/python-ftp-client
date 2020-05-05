@@ -22,6 +22,7 @@ def cli(prompt, reminder='Please type a valid command'):
                 'delete', 
                 'size', 
                 'debug'
+                'clear'
                 ]
 
     while True:
@@ -60,7 +61,7 @@ mkdir       pwd             rmdir           send        size
         if cmd.split()[0] == (commands[10]):
             level = cmd.split()[1]
             print(ftp.set_debuglevel(int(level)))
-        if cmd == 'clear':
+        if cmd == commands[11]:
             os.system("clear")
 
         if cmd in ('q', 'quit', 'exit'):
