@@ -84,4 +84,4 @@ if args.ftp_server == sys.argv[1]:
             print('FTP error: ', error)
             cli('ftp> ')  
 else:
-    print("Please enter a valid argument")
+    print("Please enter a valid argument.")
