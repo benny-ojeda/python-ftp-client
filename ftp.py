@@ -30,8 +30,9 @@ def cli(prompt, reminder='Please type a valid command'):
         try:
             if cmd == command[0]:
                 print("""
-cd          debug           delete          get         ls
-mkdir       pwd             rmdir           send        size
+cd          clear           debug           delete          get         
+ls          mkdir           pwd             rmdir           send        
+size
 """)
             if cmd == command[1]:
                 ftp.dir()
