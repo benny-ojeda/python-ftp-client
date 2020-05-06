@@ -90,12 +90,12 @@ mkdir       pwd             rmdir           send        size
             if cmd == command[11]:
                 os.system("clear")
 
-            if cmd in ('q', 'quit', 'exit'):
+            if cmd in ('q', 'quit', 'exit', 'bye'):
                 return True
 
             if len(cmd.split()) and cmd.split(' ', 1)[0] not in command:
                 print(reminder)
-                
+
         except ftplib.all_errors as error:
                 print('FTP error: ', error)
 
