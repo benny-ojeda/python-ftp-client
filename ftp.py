@@ -70,13 +70,13 @@ mkdir       pwd             rmdir           send        size
         except ftplib.all_errors as error:
                 print('FTP error: ', error)
 
-
-if args.ftp_server == sys.argv[1]:
-    with FTP(args.ftp_server) as ftp:
+if args.ftp_server:
+    try:
+        with FTP(args.ftp_server) as ftp:
             username = input('Username (%s): ' % args.ftp_server )
             password = getpass.getpass(prompt='Password: ', stream=None)
             ftp.login(user=username, passwd=password)
             print(ftp.getwelcome())
             cli('ftp> ')
-else:
-    print("Please enter a valid argument")
+    except ftplib.all_errors as error:
+        print('FTP error: ', error)
