@@ -32,8 +32,10 @@ def cli(prompt, reminder='Please type a valid command'):
         cmd = input(prompt)
         try:
             if cmd == command[0]:
-                print(*command[0:6], sep='\t')
-                print(*command[6:12], sep='\t')
+                all_commands = command[:]
+                all_commands.sort()
+                print(*all_commands[0:6], sep='\t')
+                print(*all_commands[6:12], sep='\t')
 
             if cmd == command[1]:
                 ftp.dir()
