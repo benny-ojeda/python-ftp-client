@@ -27,8 +27,8 @@ def cli(prompt, reminder='Please type a valid command'):
                 'debug',
                 'clear'
                 ]
-
-    while True:
+    shell = True
+    while shell:
         cmd = input(prompt)
         try:
             if cmd == command[0]:
@@ -95,9 +95,10 @@ def cli(prompt, reminder='Please type a valid command'):
                 os.system("clear")
 
             if cmd in ('q', 'quit', 'exit', 'bye'):
-                return True
+                print(ftp.quit())
+                shell = False
 
-            if len(cmd.split()) and cmd.split(' ', 1)[0] not in command:
+            if len(cmd.split()) and cmd.split(' ', 1)[0] not in command and cmd.split(' ', 1)[0] not in ('q', 'quit', 'exit', 'bye'):
                 print(reminder)
 
         except ftplib.all_errors as error:
